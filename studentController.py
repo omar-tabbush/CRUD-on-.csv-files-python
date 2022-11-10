@@ -4,7 +4,7 @@ import numpy as np
 import entities
 
 df = pd.read_csv('./dataset/students.csv')
-print(df)
+# print(df)
 
 
 def printAll(df):
