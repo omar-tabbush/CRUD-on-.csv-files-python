@@ -3,7 +3,7 @@ import matplotlib as matl
 import numpy as np
 import entities
 
-df = pd.read_csv('./dataset/students.csv')
+# df = pd.read_csv('./dataset/students.csv')
 #TO DO:
 #check if studId is valiable
 
@@ -40,6 +40,15 @@ def getGrades(studId):
         'courseId', 'grade']].values.tolist()
     tdf = pd.DataFrame(data={'course': [x[0] for x in aa], 'grade': [x[1] for x in aa]})
     print(tdf.to_string(index=False))
+
+# get grade for studId for one courses 
+def getGrade(studId,courseId):
+    dfRel = pd.read_csv('./dataset/1student -to- many courses.csv')
+    aa = dfRel[dfRel['studId'] == studId][[
+        'courseId', 'grade']].values.tolist()
+    aa = aa[aa['courseId'] == courseId]['grade']
+    print(aa)
+
 
 # update grade by studId & courseId
 def updateGradeBy_studIdOrCourseId(studId, courseId):
