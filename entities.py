@@ -7,7 +7,7 @@ class Course:
 
 
 class Student:
-    def __init__(self, studID, name):
+    def __init__(self, name):
         self.name = name
 
 

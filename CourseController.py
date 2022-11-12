@@ -57,8 +57,7 @@ def updateById(id, Course, df, filename):
 # print(df)
 
 
-def add(Course):
-    df = pd.read_csv('./dataset/courses.csv')
+def add(Course,df):
     df.iloc[-1] = [Course.code,
                    Course.name]
     df.to_csv('./dataset/courses.csv', index=False, header=True)

@@ -29,6 +29,6 @@ def updateById(id, Student,df,filename):
     df.to_csv('./dataset/'+filename+'.csv', index=False, header=True)
     
 
-def add(Student):
+def add(Student , df):
     df.iloc[-1] = [Student.name]
     df.to_csv('./dataset/courses.csv', index=False, header=True)
