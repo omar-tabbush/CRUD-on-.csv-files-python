@@ -2,6 +2,7 @@ import studentController
 import CourseController
 import StudentCourseController
 import entities
+import charts
 import pandas as pd
 import numpy as np
 import matplotlib as matl
@@ -18,7 +19,8 @@ while True:
     print("'2'. enter courses menu...")
     print("'3'. enter Registration menu...")
     print("'4'. enter grades menu...")
-    print("'5'. Exit program")
+    print("'5'. enter charts menu...")
+    print("'6'. Exit program")
     cmd = input()
     if (cmd == '1'):
 
@@ -151,6 +153,16 @@ while True:
             print("wrong input")
 
     elif (cmd == '5'):
+        print("1. grades of a student:")
+        print("2. Passed/Failed/AW students:")
+        print("3. average of each course:")
+        print("4. number of students for each course:")
+        print("5. exit grades menu")
+        chartcmd = input()
+        if (chartcmd == '1'):
+            charts.charts_gradesofstudent()
+            continue
+    elif(cmd == '6'):
         print("bye bye")
         break
     else:

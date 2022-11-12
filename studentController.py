@@ -3,7 +3,7 @@ import matplotlib as matl
 import numpy as np
 import entities
 
-df = pd.read_csv('./dataset/students.csv')
+# df = pd.read_csv('./dataset/students.csv')
 # print(df)
 
 
@@ -31,4 +31,4 @@ def updateById(id, Student,df,filename):
 
 def add(Student , df):
     df.iloc[-1] = [Student.name]
-    df.to_csv('./dataset/courses.csv', index=False, header=True)
+    df.to_csv('./dataset/students.csv', index=False, header=True)

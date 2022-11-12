@@ -10,12 +10,12 @@ import entities
 # get courses registered by studId
 def getCoursesInStudent(studId,dfCourse,dfRel):
     aa = dfRel[dfRel['studId'] ==studId]['courseId'].values.tolist()
-    # print(aa)
     if (aa):
         for x in aa:
             print(dfCourse.iloc[x])
     else:
         print('No courses registered')
+    return(aa)
 
 
 
@@ -44,13 +44,15 @@ def getGrades(studId,dfRel):
         'courseId', 'grade']].values.tolist()
     tdf = pd.DataFrame(data={'course': [x[0] for x in aa], 'grade': [x[1] for x in aa]})
     print(tdf.to_string(index=False))
+    return(tdf)
 
-# get grade for studId for one courses 
+# get grade for studId for one course 
 def getGrade(studId,courseId,dfRel):
     aa = dfRel[dfRel['studId'] == studId][[
         'courseId', 'grade']].values.tolist()
     aa = aa[aa['courseId'] == courseId]['grade']
     print(aa)
+    return(aa)
 
 
 # update grade by studId & courseId
