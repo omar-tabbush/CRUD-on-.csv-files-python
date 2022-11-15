@@ -162,7 +162,20 @@ while True:
         if (chartcmd == '1'):
             charts.charts_gradesofstudent()
             continue
-    elif(cmd == '6'):
+        elif (chartcmd == '2'):
+            charts.charts_gradesofcourse()
+            continue
+        elif (chartcmd == '3'):
+            charts.charts_averageOfCourses()
+            continue
+        elif (chartcmd == '4'):
+            charts.charts_nbOfStudentsInCourses()
+            continue
+        elif (gradecmd == '5'):
+            continue
+        else:
+            print("wrong input")
+    elif (cmd == '6'):
         print("bye bye")
         break
     else:
